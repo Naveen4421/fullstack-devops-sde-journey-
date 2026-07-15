@@ -1,9 +1,13 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const taskRoutes = require('./routes/tasks');
 
 const app = express();
+
+// Allow cross-origin requests from the frontend
+app.use(cors());
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
